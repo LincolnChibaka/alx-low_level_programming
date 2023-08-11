@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -c "$CFILE" -o "$BASE_NAME".o
+gcc "$CFILE" -o a.out
