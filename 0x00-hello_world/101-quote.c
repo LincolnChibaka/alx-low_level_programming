@@ -5,8 +5,8 @@
 #define STDERR_FILENO 2
 
 /**
- * custom_print - Writes a string to the standard error file descriptor
- *                using syscall
+ * custom_print - Writes a string to the standard error file descriptor using syscall
+ *
  * @str: The string to be printed
  */
 void custom_print(const char *str)
