@@ -10,7 +10,7 @@
  */
 void custom_print(const char *str)
 {
-syscall(SYS_write, STDERR_FILENO, str, strlen(str));
+	syscall(SYS_write, STDERR_FILENO, str, strlen(str));
 }
 
 /**
@@ -20,7 +20,8 @@ syscall(SYS_write, STDERR_FILENO, str, strlen(str));
  */
 int main(void)
 {
-const char *message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-custom_print(message);
-return (1);
+	const char *message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	custom_print(message);
+	return (1);
 }
+
