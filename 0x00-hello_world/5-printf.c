@@ -1,7 +1,9 @@
 #include <stdio.h>
+
 /**
- * print a string with proper grammar using printf function
- * Return 0 to indicatre success
+ * main - Prints a string with proper grammar using printf function
+ *
+ * Return: 0 for success
  */
 int main(void)
 {
