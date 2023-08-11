@@ -1,4 +1,4 @@
-#!/bin/bash
+#include <stdio.h>
 /**
  * Print the string using puts function
  * Then return 0 for a success
