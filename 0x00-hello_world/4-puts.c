@@ -1,11 +1,11 @@
 #!/bin/bash
 /**
- * Print the string "Programming is like building a multilingual puzzle" using puts function
+ * Print the string using puts function
  * Then return 0 for a success
  */
 #include <stdio.h>
-int main ()
+int main(void)
 {
-puts("Programming is like building a multilingual puzzle");
+puts("\"Programming is like building a multilingual puzzle");
 return (0);
 }
