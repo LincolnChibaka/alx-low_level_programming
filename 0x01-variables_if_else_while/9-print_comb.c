@@ -11,21 +11,21 @@
  */
 int main(void)
 {
-    int number;
+	int number;
 
-    /* Print possible combinations of single-digit numbers */
-    for (number = 0; number < 10; number++)
-    {
-        putchar('0' + number);
+	/* Print possible combinations of single-digit numbers */
+	for (number = 0; number < 10; number++)
+	{
+		putchar('0' + number);
 
-        if (number < 9)
-        {
-            putchar(',');
-            putchar(' ');
-        }
-    }
+		if (number < 9)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+	}
 
-    putchar('\n');
+	putchar('\n');
 
-    return (0);
+	return (0);
 }
