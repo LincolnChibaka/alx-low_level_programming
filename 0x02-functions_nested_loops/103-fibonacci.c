@@ -7,19 +7,21 @@
  */
 int main(void)
 {
-	int i;
-	unsigned long f1, f2, next;
+	int f1, f2, next, sum;
 
 	f1 = 1;
 	f2 = 2;
-	printf("%lu, %lu", f1, f2);
-	for (i = 0; i < 48; i++)
+	sum = 0;
+	while (f1 < 4000000)
 	{
-		next = f1 + f2;
-		printf(", %lu", next);
-		f1 = f2;
-		f2 = next;
+	if (f1 % 2 == 0)
+	{
+		sum += f1;
 	}
-	printf("\n");
+	next = f1 + f2;
+	f1 = f2;
+	f2 = next;
+	}
+	printf("%d\n", sum);
 	return (0);
 }
