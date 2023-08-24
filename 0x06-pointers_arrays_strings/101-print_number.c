@@ -1,10 +1,8 @@
 #include "main.h"
-
 /**
- * print_number - prints an integer
- * @n: the integer to be printed
- *
- * Return: nothing
+ * print_number - Printing integer values only
+ * @n: Integer variable to iterate through
+ * Return: Nothing at this moment
  */
 void print_number(int n)
 {
