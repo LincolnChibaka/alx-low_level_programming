@@ -1,47 +1,23 @@
-#include <stddef.h>
 #include "main.h"
 
-int check_palindrome(char *s, int start, int end);
-
 /**
- * is_palindrome - Checks if a string is a palindrome.
+ * is_palindrome - checks if a string is a palindrome
+ * @s: the string to check
  *
- * @s: The input string to be checked.
- *
- * Return: 1 if palindrome, 0 if not.
+ * Return: 1 if the string is a palindrome, 0 otherwise
  */
+
 int is_palindrome(char *s)
 {
-	int length = 0;
+	int len = strlen(s);
+	int i;
 
-	if (s == NULL)
-		return (0); /* Null string is not a palindrome*/
-
-	while (s[length] != '\0')
-		length++; /* Calculate the length of the string*/
-
-	 /* Call the helper function with initial indices*/
-	return (check_palindrome(s, 0, length - 1));
-}
-
-/**
- * check_palindrome - Helper function to check palindrome recursively.
- *
- * @s: The input string to be checked.
- * @start: The starting index for checking palindrome.
- * @end: The ending index for checking palindrome.
- *
- * Return: 1 if palindrome, 0 if not.
- */
-int check_palindrome(char *s, int start, int end)
-{
-	if (start >= end)
-		/* Base case: characters matched or crossed, palindrome*/
-		return (1);
-
-	if (s[start] != s[end])
-		return (0); /* Characters mismatch, not a palindrome*/
-
-	 /* Check next characters*/
-	return (check_palindrome(s, start + 1, end - 1));
+	for (i = 0; i < len / 2; i++)
+	{
+		if (s[i] != s[len - i - 1])
+		{
+			return (0);
+		}
+	}
+	return (1);
 }
