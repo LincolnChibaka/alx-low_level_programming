@@ -1,6 +1,8 @@
 #include <stddef.h>
 #include "main.h"
 
+int check_palindrome(char *s, int start, int end);
+
 /**
  * is_palindrome - Checks if a string is a palindrome.
  *
@@ -18,6 +20,7 @@ int is_palindrome(char *s)
 	while (s[length] != '\0')
 		length++; /* Calculate the length of the string*/
 
+	 /* Call the helper function with initial indices*/
 	return (check_palindrome(s, 0, length - 1));
 }
 
@@ -39,7 +42,6 @@ int check_palindrome(char *s, int start, int end)
 	if (s[start] != s[end])
 		return (0); /* Characters mismatch, not a palindrome*/
 
-	/* Check next characters*/
-
+	 /* Check next characters*/
 	return (check_palindrome(s, start + 1, end - 1));
 }
