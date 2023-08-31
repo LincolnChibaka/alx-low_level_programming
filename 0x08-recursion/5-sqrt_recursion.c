@@ -13,7 +13,7 @@
  */
 int _sqrt_helper(int n, int start, int end)
 {
-	int mid = (start + end) / 2;
+	int mid = start + (end - start) / 2;
 
 	if (mid * mid == n)
 		return (mid); /* Square root found */
