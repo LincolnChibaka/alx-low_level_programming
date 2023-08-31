@@ -12,10 +12,10 @@ int check_palindrome(char *s, int start, int end);
  */
 int is_palindrome(char *s)
 {
+	int length = 0;
+
 	if (s == NULL)
 		return (0); /* Null string is not a palindrome*/
-
-	int length = 0;
 
 	while (s[length] != '\0')
 		length++; /* Calculate the length of the string*/
