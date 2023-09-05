@@ -1,6 +1,5 @@
-#include <stdlib.h>
+ #include <stdlib.h>
 #include <stdio.h>
-#include "main.h"
 
 /**
  * is_space - Checks if a character is a space, tab, or newline.
@@ -33,6 +32,12 @@ int count_words(char *str)
 /**
  * strtow - Splits a string into words.
  * @str: The string to split.
+ *
+ * This function takes an input string and splits it into
+ * individual words based on spaces, tabs, and newlines.
+ * It dynamically allocates memory for an array of strings
+ * to hold these words and returns a pointer to the array.
+ * The last element of the array is set to NULL.
  *
  * Return: A pointer to an array of strings (words), or NULL if it fails.
  */
