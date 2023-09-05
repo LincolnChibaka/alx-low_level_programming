@@ -10,9 +10,6 @@
  */
 char **strtow(char *str)
 {
-	char **words;
-	int i, j, k, word_count = 0, len = 0, start = 0;
-
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
@@ -29,7 +26,7 @@ int main(void)
 	char **result = strtow("  Hello  World  ");
 
 	if (result != NULL)
-		{
+	{
 		int i = 0;
 
 		while (result[i] != NULL)
@@ -39,6 +36,6 @@ int main(void)
 			i++;
 		}
 		free(result);
-		}
+	}
 	return (0);
 }
