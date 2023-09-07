@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
 			min_coins++;
 		}
 	}
-
 	printf("%d\n", min_coins);
 
 	return (0);
