@@ -1,75 +1,53 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include "main.h"
 
 /**
- * string_nconcat - Concatenates two strings.
- * @s1: The first string.
- * @s2: The second string.
- * @n: The number of bytes from s2 to concatenate.
+ * string_nconcat - concatenates two strings
+ * @s1: first string
+ * @s2: second string
+ * @n: number of bytes to concatenate from s2
  *
- * Return: A pointer to the newly allocated concatenated string.
- * If allocation fails or if n is greater or equal to the length
- * of s2, return NULL.
+ * Return: pointer to the new string, or NULL if it fails
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int len1, len2, i, j;
-	char *result;
+	char *new_str; /* pointer to hold the new string */
+	unsigned int len1, len2; /* lengths of s1 and s2 */
+	unsigned int i, j; /* loop indices */
 
+	/* if NULL is passed, treat it as an empty string */
 	if (s1 == NULL)
 		s1 = "";
-
 	if (s2 == NULL)
 		s2 = "";
 
+	/* get the lengths of s1 and s2 */
 	len1 = strlen(s1);
 	len2 = strlen(s2);
 
 	if (n >= len2)
 		n = len2;
 
-	result = malloc(len1 + n + 1); /* +1 for the null terminator */
+	/* allocate memory for the new string using malloc */
+	new_str = malloc((len1 + n + 1) * sizeof(char));
 
-	if (result == NULL)
+	/* check if allocation failed */
+	if (new_str == NULL)
 		return (NULL);
 
+	/* copy s1 to the new string */
 	for (i = 0; i < len1; i++)
-		result[i] = s1[i];
+		new_str[i] = s1[i];
 
-	for (j = 0; j < n; j++, i++)
-		result[i] = s2[j];
+	/* copy n bytes from s2 to the new string */
+	for (j = 0; j < n; j++)
+		new_str[i + j] = s2[j];
 
-	result[i] = '\0'; /* Null-terminate the concatenated string */
+	/* add a null character at the end of the new string */
+	new_str[i + j] = '\0';
 
-	return (result);
+	/* return the pointer to the new string */
+	return (new_str);
 }
-
-/**
- * main - Entry point of the program.
- *
- * Return: Always returns 0.
- */
-
-int main(void)
-{
-	char s1[] = "Hello, ";
-	char s2[] = "world!";
-	unsigned int n = 5;
-
-	char *concatenated = string_nconcat(s1, s2, n);
-
-	if (concatenated != NULL)
-	{
-		printf("Concatenated string: %s\n", concatenated);
-		free(concatenated);
-	}
-	else
-	{
-		printf("Memory allocation failed.\n");
-	}
-
-	return (0);
-}
-
