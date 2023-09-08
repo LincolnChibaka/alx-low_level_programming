@@ -1,73 +1,38 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
- * array_range - Creates an array of integers from min to max.
- * @min: The minimum value (inclusive).
- * @max: The maximum value (inclusive).
+ * array_range - creates an array of integers
+ * @min: minimum value in the array
+ * @max: maximum value in the array
  *
- * Return: A pointer to the newly created array.
- * If min > max or if malloc fails, returns NULL.
+ * Return: pointer to the newly created array, or NULL if it fails
  */
 int *array_range(int min, int max)
 {
-	int *arr;
-	int i, size;
+	int *array; /* pointer to hold the new array */
+	int i; /* loop index */
+	int size; /* size of the array */
 
+	/* if min > max, return NULL */
 	if (min > max)
 		return (NULL);
 
+	/* calculate the size of the array */
 	size = max - min + 1;
 
-	arr = malloc(sizeof(int) * size);
+	/* allocate memory for the array using malloc */
+	array = malloc(size * sizeof(int));
 
-	if (arr == NULL)
+	/* check if allocation failed */
+	if (array == NULL)
 		return (NULL);
 
+	/* fill the array with values from min to max */
 	for (i = 0; i < size; i++)
-	{
-		arr[i] = min + i;
-	}
+		array[i] = min + i;
 
-	return (arr);
+	/* return the pointer to the new array */
+	return (array);
 }
-
-/**
- * main - Entry point of the program.
- *
- * Return: Always returns 0.
- */
-
-int main(void)
-{
-	int min = 1;
-	int max = 5;
-
-	int *result = array_range(min, max);
-
-	if (result != NULL)
-	{
-		printf("Created array:\n");
-		for (int i = 0; i <= (max - min); i++)
-		{
-			printf("%d ", result[i]);
-		}
-		printf("\n");
-
-		free(result);
-	}
-	else
-	{
-		printf("Memory allocation failed or min > max.\n");
-	}
-
-	return (0);
-}
-
-
-
-
-
-
-
